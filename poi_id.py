@@ -138,7 +138,7 @@ clf = AdaBoostClassifier(
 # features importance    
 clf.fit(features, labels)
 importances = clf.feature_importances_
-print features_list, importances
+print (features_list, importances)
 
 clf1 = AdaBoostClassifier(
     DecisionTreeClassifier(max_depth=1),
@@ -178,18 +178,18 @@ confusion_matrix2 = Conf_Mat(predictions, true_labels)
 # calculate the confusion_matrix for the two subset
 confusion_matrix = (confusion_matrix2 + confusion_matrix1)
 
-print "TP: {} TN: {} FP: {} FN: {}".format(confusion_matrix1[True, True],
+print ("TP: {} TN: {} FP: {} FN: {}".format(confusion_matrix1[True, True],
                                            confusion_matrix1[False, False],
                                            confusion_matrix1[False, True],
-                                           confusion_matrix1[True, False])
+                                           confusion_matrix1[True, False]))
 
-print "TP: {} TN: {} FP: {} FN: {}".format(confusion_matrix2[True, True],
+print ("TP: {} TN: {} FP: {} FN: {}".format(confusion_matrix2[True, True],
                                            confusion_matrix2[False, False],
                                            confusion_matrix2[False, True],
-                                           confusion_matrix2[True, False])
+                                           confusion_matrix2[True, False]))
 
-print "The precision of this classifier?", (confusion_matrix[True, True])/float(confusion_matrix[True, True] + confusion_matrix[False, True])
-print "The recall of this classifier?", (confusion_matrix[True, True])/(float(confusion_matrix[True, True] + confusion_matrix[True, False]))
+print ("The precision of this classifier?", (confusion_matrix[True, True])/float(confusion_matrix[True, True] + confusion_matrix[False, True]))
+print ("The recall of this classifier?", (confusion_matrix[True, True])/(float(confusion_matrix[True, True] + confusion_matrix[True, False])))
 
 # optimization using GridSearchCV
 '''
