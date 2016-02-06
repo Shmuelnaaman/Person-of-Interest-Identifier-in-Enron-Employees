@@ -11,7 +11,7 @@ from tester import test_classifier, dump_classifier_and_data
 # from sklearn import cross_validation
 
 '''
-Select what features 
+Select  features 
 features_list is a list of strings, each of which is a feature name.
 The first feature must is  "poi".
 '''
